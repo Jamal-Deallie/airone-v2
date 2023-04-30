@@ -1,0 +1,29 @@
+@use '@/styles/abstracts/_index' as *;
+@use '@/styles/base/_media' as *;
+
+.btn {
+  grid-column: 1/ -1;
+  background-color: var(--quaternary-variant);
+  border: 2px solid #422800;
+  border-radius: 4px;
+  box-shadow: var(--secondary-variant) 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  &:hover {
+    background-color: #fff;
+  }
+
+  @include desktop {
+    grid-column: 5 / span 4;
+  }
+}

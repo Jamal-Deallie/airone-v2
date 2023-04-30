@@ -1,0 +1,39 @@
+@use '@/styles/abstracts/_index' as *;
+@use '@/styles/base/_media' as *;
+
+.service {
+  background-color: var(--tertiary-variant);
+  position: relative;
+  border-top: 2px solid var(--secondary-variant);
+}
+
+.stars {
+  margin: mobile-vw(64px) 0 0 mobile-vw(105px);
+
+  @include desktop {
+    margin: desktop-vw(128px) 0 0 desktop-vw(450px);
+  }
+}
+
+.services-wrap {
+  margin: mobile-vw(48px) 0 mobile-vw(5px);
+
+  @include desktop {
+    margin: desktop-vw(96px) 0 desktop-vw(5px);
+  }
+}
+
+.grid-cont {
+  @include mobile {
+    max-width: 500px;
+    margin-inline: auto;
+  }
+
+  @include desktop {
+    margin-left: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-gap: var(--layout-columns-gap);
+    width: desktop-vw(1200px);
+  }
+}

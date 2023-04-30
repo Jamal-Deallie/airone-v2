@@ -1,0 +1,59 @@
+@use '@/styles/abstracts/_index' as *;
+@use '@/styles/base/_media' as *;
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--nav-height);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+  background-color: var(--primary-variant);
+  border-bottom: 2px solid var(--secondary-variant);
+}
+
+.inner {
+  width: var(--layout-width);
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 11;
+  aspect-ratio: 259.33 / 246.849;
+  border: solid 2px var(--secondary-variant);
+  border-radius: 50%;
+  width: auto;
+  overflow: hidden;
+  background-color: var(--tertiary-variant);
+  height: calc(var(--nav-height) - mobile-vw(20px));
+  @include desktop {
+    height: calc(var(--nav-height) - desktop-vw(20px));
+  }
+  .wrap {
+    position: relative;
+    aspect-ratio: 259.33 / 246.849;
+    height: calc(var(--nav-height) - mobile-vw(27px));
+    width: auto;
+    @include desktop {
+      height: calc(var(--nav-height) - desktop-vw(30px));
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

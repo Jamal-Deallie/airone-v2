@@ -1,0 +1,42 @@
+@use '@/styles/abstracts/_index' as *;
+@use '@/styles/base/_media' as *;
+
+.faq {
+  padding: mobile-vw(16px);
+  border: 2px solid var(--secondary-variant);
+  border-radius: 4px;
+  background-color: var(--quaternary-variant);
+  cursor: pointer;
+  .question {
+  
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    span {
+      display: block;
+      padding-right: 2rem;
+    }
+    svg {
+      width: 16px;
+      height: 16px;
+      stroke-width: 3;
+      // stroke: var(--secondary-variant);
+    }
+  }
+  .answer-wrap {
+    opacity: 0;
+    position: relative;
+    height: 0;
+    @include desktop {
+      margin-top: desktop-vw(16px);
+    }
+  }
+  @include desktop {
+    padding: desktop-vw(24px);
+  }
+}
+
+.faq + .faq {
+  margin-top: 0.75rem;
+}

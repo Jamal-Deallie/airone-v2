@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "src": "https://res.cloudinary.com/dtwk4dm3g/image/upload/v1667602974/air_one/team-airone-2_x1dlwq.png",
+    "name": "Portia Hightower",
+    "title": "CEO, C0-Founder",
+    "desc": "Proin eget tortor risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque velit nisi, pretium ut lacinia in",
+    "reverse": false
+  },
+
+  {
+    "id": 2,
+    "src": "https://res.cloudinary.com/dtwk4dm3g/image/upload/v1667602974/air_one/team-airone-1_ioekiv.png",
+    "name": "Axl Boniface",
+    "title": "CTO",
+    "desc": "Proin eget tortor risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque velit nisi, pretium ut lacinia in",
+    "reverse": true
+  },
+
+  {
+    "id": 3,
+    "src": "https://res.cloudinary.com/dtwk4dm3g/image/upload/v1667603015/air_one/team-airone-6_lxxkdv.png",
+    "name": "Renae Dannie",
+    "title": "CCO",
+    "desc": "Proin eget tortor risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque velit nisi, pretium ut lacinia in",
+    "reverse": false
+  },
+
+  {
+    "id": 4,
+    "src": "https://res.cloudinary.com/dtwk4dm3g/image/upload/v1667602974/air_one/team-airone-4_txbglc.webp",
+    "name": "Allan Stanley",
+    "title": "Identity Manager",
+    "desc": "Proin eget tortor risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque velit nisi, pretium ut lacinia in",
+    "reverse": true
+  },
+  {
+    "id": 5,
+    "src": "https://res.cloudinary.com/dtwk4dm3g/image/upload/v1667602974/air_one/team-airone-5_lqburh.png",
+    "name": "William Bennett",
+    "title": "Production Manager",
+    "desc": "Proin eget tortor risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque velit nisi, pretium ut lacinia in",
+    "reverse": false
+  },
+  {
+    "id": 6,
+    "src": "https://res.cloudinary.com/dtwk4dm3g/image/upload/v1667602974/air_one/team-airone-3_ipdrmo.png",
+    "name": "Luanne Florrie",
+    "title": "Design Manager",
+    "desc": "Proin eget tortor risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque velit nisi, pretium ut lacinia in",
+    "reverse": false
+  }
+]

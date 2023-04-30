@@ -1,0 +1,51 @@
+@use '@/styles/abstracts/_index' as *;
+@use '@/styles/base/_media' as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  textarea {
+    height: 205px;
+    resize: none;
+    border: 1.75px solid rgba(255, 255, 255, 0.7);
+
+    width: 100%;
+    color: var(--tertiary-variant);
+    padding-top: 16px;
+    padding-inline: 16px;
+  }
+
+  textarea::placeholder {
+    color: var(--tertiary-variant);
+  }
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  min-height: 4.8rem;
+  cursor: pointer;
+  border: 3px solid var(--secondary-variant);
+  box-shadow: 0.37vw 0.25vw 0vw var(--secondary-variant);
+  border-radius: 5px;
+  border-radius: 3px;
+  font-weight: 500;
+  outline: none;
+  transition: all 0.2s;
+  font-size: 16px;
+  color: var(--secondary-variant);
+  background-color: var(--quaternary-variant);
+  transition: background-color color 250ms ease-in-out;
+  &:hover {
+    background-color: var(--tertiary-variant);
+    color: var(--secondary-variant);
+    border: 1.75px solid var(--secondary-variant);
+  }
+
+  @include desktop {
+    grid-column: 5 / span 4;
+  }
+}

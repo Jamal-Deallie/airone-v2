@@ -1,0 +1,64 @@
+@use '@/styles/abstracts/_index' as *;
+@use '@/styles/base/_media' as *;
+
+.image {
+  grid-column: 1/ -1;
+  position: relative;
+  aspect-ratio: 1;
+
+  img {
+    aspect-ratio: 1;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  @include desktop {
+    grid-column: -13 / span 6;
+    border-right: 2px solid var(--secondary-variant);
+  }
+}
+
+.desc-cont {
+  position: relative;
+  grid-column: 1/ -1;
+  padding: mobile-vw(24px);
+  h3 {
+    @include outline-font(var(--quaternary-variant), mobile-vw(1px));
+    font-size: mobile-vw(31.25px);
+  }
+  p {
+    font-size: mobile-vw(19px);
+  }
+  @include desktop {
+    grid-column: 7 / -1;
+    padding: desktop-vw(64px);
+    h3 {
+      @include outline-font(var(--quaternary-variant), desktop-vw(3px));
+      font-size: desktop-vw(60.77px);
+      letter-spacing: 1px;
+    }
+    p {
+      font-size: desktop-vw(21px);
+    }
+  }
+}
+.desc {
+  margin: mobile-vw(16px) 0;
+
+  @include desktop {
+    margin: desktop-vw(32px) 0 desktop-vw(48px);
+  }
+}
+.founder-info {
+  span {
+    display: block;
+    font-size: mobile-vw(16px);
+  }
+
+  @include desktop {
+    span {
+      font-size: desktop-vw(15px);
+    }
+  }
+}

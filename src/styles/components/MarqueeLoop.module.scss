@@ -1,0 +1,111 @@
+@use '@/styles/abstracts/_index' as *;
+@use '@/styles/base/_media' as *;
+
+.marquee {
+  --gap: 10px;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+  transform: rotate(-5deg);
+  ul {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    min-width: 100%;
+    gap: var(--gap);
+    animation: scroll 20s linear infinite;
+  }
+
+  h1 {
+    @include outline-font(transparent, mobile-vw(1px)) {
+      line-height: 1;
+      text-align: center;
+      font-size: mobile-vw(31.25px);
+    }
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    ul {
+      animation-play-state: paused !important;
+    }
+  }
+
+  @include desktop {
+    ul {
+      animation: scroll 20s linear infinite;
+    }
+
+    h1 {
+      @include outline-font(transparent, desktop-vw(3px)){
+        line-height: 1;
+        text-align: center;
+        font-size: desktop-vw(149.01px);
+      }
+    }
+  }
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin-inline: auto;
+  transform: rotate(-5deg);
+}
+
+.inner {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: clamp(5.36rem, calc(4.3rem + 5.33vw), 9.1rem);
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.flex {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  overflow: hidden;
+  height: 100%;
+}
+
+.loop-wrapper {
+  height: 100%;
+  width: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: auto;
+  margin-left: 10px;
+
+  width: mobile-vw(16px);
+  height: mobile-vw(16px);
+
+  @include desktop {
+    width: desktop-vw(30px);
+    height: desktop-vw(30px);
+  }
+}

@@ -1,0 +1,53 @@
+@use '@/styles/abstracts/_index' as *;
+@use '@/styles/base/_media' as *;
+
+.container {
+  margin: mobile-vw(24px) 0;
+  width: fit-content;
+  margin-inline: auto;
+  position: relative;
+
+  height: 50px;
+  width: 100%;
+  .outer {
+    width: 100%;
+    position: absolute;
+    display: inline-flex;
+    justify-content: center;
+    height: 50px;
+    bottom: 0;
+    z-index: 1;
+    gap: 1rem;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1;
+      height: 50px;
+      width: 50px;
+      cursor: pointer;
+      border: 1.75px solid var(--tertiary-variant);
+      border-radius: 3px;
+      font-weight: 500;
+      outline: none;
+      transition: all 0.2s;
+      color: var(--tertiary-variant);
+      background-color: var(--quaternary-variant);
+      border-color: var(--tertiary-variant);
+      border: 2px solid var(--secondary-variant);
+      border-radius: 50%;
+      box-shadow: var(--secondary-variant) 4px 4px 0 0;
+      transition: background-color color 250ms ease-in-out;
+      &:hover {
+        background-color: var(--secondary-variant);
+        color: var(--quinary-variant);
+        border: 2px solid var(--tertiary-variant);
+      }
+    }
+  }
+
+  @include desktop {
+    margin-top: desktop-vw(48px);
+  }
+}

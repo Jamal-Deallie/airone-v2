@@ -1,0 +1,114 @@
+@use '@/styles/abstracts/_index' as *;
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--heading-font), sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-style: normal;
+  line-height: 86%;
+}
+
+p {
+  font-family: var(--body-font), sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 125%;
+}
+
+.text {
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  font-size: mobile-vw(12px);
+
+  @include desktop {
+    font-size: desktop-vw(16px);
+    line-height: 133%;
+  }
+}
+
+.text-sm {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  font-size: mobile-vw(14px);
+
+  @include desktop {
+    font-size: desktop-vw(14px);
+    line-height: 114%;
+  }
+}
+
+.split-child {
+  display: inline-block;
+  opacity: 1;
+}
+
+.title-tertiary {
+  font-size: mobile-vw(41.89px);
+  @include outline-font(var(--tertiary-variant), mobile-vw(1px));
+  line-height: 1;
+
+  @include desktop {
+    @include outline-font(var(--tertiary-variant), desktop-vw(3px));
+    font-size: desktop-vw(177.42px);
+    line-height: 0.87;
+    letter-spacing: 1px;
+  }
+}
+
+.title-quaternary {
+  font-size: mobile-vw(41.89px);
+  @include outline-font(var(--quaternary-variant), mobile-vw(1px));
+  line-height: 1;
+
+  @include desktop {
+    @include outline-font(var(--quaternary-variant), desktop-vw(3px));
+    font-size: desktop-vw(177.42px);
+    line-height: 0.87;
+    letter-spacing: 1px;
+  }
+}
+
+.desc-big {
+  @include outline-font(var(--quaternary-variant), mobile-vw(1px));
+  font-family: var(--heading-font);
+  font-size: mobile-vw(31.89px);
+  text-align: left;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  font-weight: 900;
+  font-style: normal;
+  text-transform: uppercase;
+
+  @include desktop {
+    @include outline-font(var(--quaternary-variant), desktop-vw(3px));
+  }
+}
+
+.desc-center {
+  display: flex;
+  justify-content: center;
+  grid-column: 1 / -1;
+  p {
+    max-width: 600px;
+  }
+  @include desktop {
+    p {
+      max-width: 55ch;
+    }
+  }
+}
+
+.desc-left {
+  grid-column: 1 / -1;
+  p {
+    max-width: 500px;
+  }
+  @include desktop {
+    grid-column: 1 / span 5;
+  }
+}

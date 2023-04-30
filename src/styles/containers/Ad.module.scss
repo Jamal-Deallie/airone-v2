@@ -1,0 +1,70 @@
+@use '@/styles/abstracts/_index' as *;
+@use '@/styles/base/_media' as *;
+
+.ad {
+  min-height: 100%;
+  @include mobile {
+    padding-top: mobile-vw(96px);
+    padding-bottom: mobile-vw(96px);
+  }
+
+  h1 {
+    @include outline-font(var(--quaternary-variant), mobile-vw(1px));
+    font-size: mobile-vw(25.89px);
+  }
+
+  @include desktop {
+    min-height: 100%;
+    padding-top: desktop-vw(128px);
+
+    h1 {
+      @include outline-font(var(--quaternary-variant), desktop-vw(3px));
+      font-size: desktop-vw(67.77px);
+      margin-bottom: desktop-vw(48px);
+    }
+  }
+}
+
+.content {
+  grid-column: 1 / -1;
+
+  p:nth-of-type(3),
+  p:nth-of-type(1) {
+    margin-top: desktop-vw(16px);
+  }
+
+  @include desktop {
+    grid-column: 1 / 5;
+    p:nth-of-type(1),
+    p:nth-of-type(2) {
+      font-weight: 600;
+      font-size: desktop-vw(20px);
+    }
+
+    p:nth-of-type(3) {
+      margin-top: desktop-vw(16px);
+    }
+  }
+}
+
+.wrap {
+  position: relative;
+  grid-column: 1 / -1;
+  overflow: hidden;
+  height: auto;
+  aspect-ratio: 1;
+  .img {
+    position: relative;
+    border: 2px solid var(--secondary-variant);
+    overflow: hidden;
+    aspect-ratio: 1;
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  @include desktop {
+    grid-column: 6 / 13;
+  }
+}
