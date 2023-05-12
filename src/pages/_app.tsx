@@ -1,10 +1,12 @@
 import type { AppProps } from 'next/app';
 import { useEffect } from 'react';
 import Layout from '@/components/Layout';
+import ViewPortHeight from '@/components/ViewPortHeight';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import SplitText from 'gsap/dist/SplitText';
 import { ReactLenis, useLenis } from '@studio-freight/react-lenis';
+import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayout';
 import { useStore } from '@/lib/store';
 import 'blaze-slider/dist/blaze.css';
 import '@/styles/base/globals.scss';
@@ -34,12 +36,6 @@ export default function App({ Component, pageProps }: AppProps) {
     return null;
   }
 
-  function ScrollableContent() {
-    useLenis((lenis: { progress: number }) => {
-      console.log('Current page progress', lenis.progress);
-    });
-  }
-
   useEffect(() => {
     if (navIsOpened) {
       lenis?.stop();
@@ -48,9 +44,9 @@ export default function App({ Component, pageProps }: AppProps) {
     }
   }, [lenis, navIsOpened]);
 
-  // useIsomorphicLayoutEffect(() => {
-  //   if (lenis) ScrollTrigger.refresh();
-  // }, [lenis]);
+  useIsomorphicLayoutEffect(() => {
+    if (lenis) ScrollTrigger.refresh();
+  }, [lenis]);
 
   useEffect(() => {
     window.history.scrollRestoration = 'manual';
@@ -60,6 +56,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ReactLenis root>
       <Layout>
+        <ViewPortHeight />
         <Component {...pageProps} />
       </Layout>
     </ReactLenis>

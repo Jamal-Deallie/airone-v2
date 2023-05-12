@@ -1,28 +1,11 @@
 @use '@/styles/abstracts/_index' as *;
 @use '@/styles/base/_media' as *;
 
-.title-wrap {
-  grid-column: 1/ -1;
-  margin-top: mobile-vw(96px);
-
-  @include desktop {
-    margin-top: desktop-vw(96px);
-  }
-}
-
 .about-wrap {
   grid-column: 1/ -1;
 
   @include desktop {
     grid-column: 1/ 9;
-  }
-
-  p:nth-of-type(2) {
-    margin-top: mobile-vw(12px);
-
-    @include desktop {
-      margin-top: desktop-vw(24px);
-    }
   }
 }
 
@@ -37,9 +20,8 @@
     margin-top: mobile-vw(16px);
 
     @include desktop {
-     margin-top: desktop-vw(16px);     
+      margin-top: desktop-vw(16px);
     }
-    
   }
 }
 

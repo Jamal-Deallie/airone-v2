@@ -22,47 +22,36 @@ export default function SplitLines({
   const tl = useRef<gsap.core.Timeline>(null!);
 
   useIsomorphicLayoutEffect(() => {
-    let mm = gsap.matchMedia();
-    const q = gsap.utils.selector(root);
+    const mm = gsap.matchMedia(root);
 
-    mm.add(
-      '(min-width: 800px)',
-      () => {
-        document.fonts.ready.then(function () {
-          const splitLines = new SplitText(q('p'), { type: 'lines' });
+    mm.add('(min-width: 800px)', context => {
+      tl.current = gsap.timeline({
+        scrollTrigger: {
+          start: 'top center',
+          end: 'bottom bottom',
+          trigger: root.current,
+        },
+      });
 
-          tl.current = gsap.timeline({
-            scrollTrigger: {
-              start: 'center center' || start,
-              end: 'bottom bottom',
-              trigger: root.current,
-            },
-          });
+      gsap.set(root.current, { overflow: 'hidden' });
+      
+      const splitLines = new SplitText('p', {
+        type: 'lines',
+      });
 
-          tl.current.from(splitLines.lines, {
-            opacity: 0,
-            y: '50%',
-            duration: 1.5,
-            ease: 'power4.out',
-            stagger: 0.2,
-          });
-
-          return () => {
-            splitLines.revert();
-          };
-        });
-      },
-      root
-    );
+      tl.current.from(splitLines.lines, {
+        opacity: 0,
+        y: '50%',
+        duration: 1.5,
+        ease: 'power4.out',
+        stagger: 0.2,
+      });
+    });
 
     return () => {
       mm.revert();
     };
   }, []);
 
-  return (
-    <div ref={root} className='of-h'>
-      {children}
-    </div>
-  );
+  return <div ref={root}>{children}</div>;
 }

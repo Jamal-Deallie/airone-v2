@@ -1,4 +1,4 @@
-import Accordion from '@/components/Accordion';
+import { Accordion } from '@/components/Accordion';
 import Image from 'next/image';
 import BatchUp from '@/animations/BatchUp';
 import ContainerAnimation from '@/animations/ContainerAnimation';
@@ -9,12 +9,12 @@ type Props = {};
 
 export default function Faqs({}: Props) {
   return (
-    <ContainerAnimation iconUp={true}>
-      <section className={cn(styles['faqs'], 'bg-tertiary pb-9 br-t')}>
-        <div className='main-cont'>
-          <div className='title-left pt'>
-            <h1 className='title-quaternary title'>Common</h1>
-            <h1 className='title-quaternary title'>Questions</h1>
+    <section className={cn(styles['faqs'], 'bg-tertiary py-10 br-b')}>
+      <div className='main-cont'>
+        <ContainerAnimation iconUp={true}>
+          <div className='title-left'>
+            <h1 className='title quaternary'>Common</h1>
+            <h1 className='title quaternary'>Questions</h1>
             <div className={styles['stars']}>
               <div className={styles['star']}>
                 <Image
@@ -40,16 +40,16 @@ export default function Faqs({}: Props) {
               </div>
             </div>
           </div>
-          <BatchUp>
-            <div className={cn(styles['accordion-cont'], 'mart-xl')}>
-              <Accordion />
-              <Accordion />
-              <Accordion />
-              <Accordion />
-            </div>
-          </BatchUp>
-        </div>
-      </section>
-    </ContainerAnimation>
+        </ContainerAnimation>
+        <BatchUp>
+          <div className={cn(styles['accordion-cont'], 'mt-7-10')}>
+            <Accordion />
+            <Accordion />
+            <Accordion />
+            <Accordion />
+          </div>
+        </BatchUp>
+      </div>
+    </section>
   );
 }

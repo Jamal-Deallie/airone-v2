@@ -2,7 +2,6 @@
 @import './_fonts.scss';
 @import './_media.scss';
 @import './_colors.scss';
-@import './_functions.scss';
 @import './_utilities.scss';
 @import './_font-style.scss';
 @import '../abstracts/index';
@@ -16,7 +15,6 @@ body {
   font-family: var(--body-font);
 }
 
-/* For images to not be able to exceed their container */
 img {
   max-width: 100%;
 }

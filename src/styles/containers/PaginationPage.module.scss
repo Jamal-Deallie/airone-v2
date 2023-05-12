@@ -1,24 +1,11 @@
 @use '@/styles/abstracts/_index' as *;
 @use '@/styles/base/_media' as *;
 
-.paginated-page {
-  min-height: calc(100vh - 10rem);
-}
-
-.ads {
-  margin-top: mobile-vw(48px);
-
-  @include desktop {
-    margin-top: desktop-vw(96px);
-  }
-}
 .grid {
   position: relative;
-  // margin: $space-2xl-3xl auto;
   overflow: hidden;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
   column-gap: 7vw;
   row-gap: 7vh;
 }

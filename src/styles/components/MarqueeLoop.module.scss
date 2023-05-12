@@ -18,11 +18,8 @@
   }
 
   h1 {
-    @include outline-font(transparent, mobile-vw(1px)) {
-      line-height: 1;
-      text-align: center;
-      font-size: mobile-vw(31.25px);
-    }
+    line-height: 1;
+    text-align: center;
   }
 
   @keyframes scroll {
@@ -46,11 +43,9 @@
     }
 
     h1 {
-      @include outline-font(transparent, desktop-vw(3px)){
-        line-height: 1;
-        text-align: center;
-        font-size: desktop-vw(149.01px);
-      }
+      line-height: 1;
+      text-align: center;
+      font-size: desktop-vw(149.01px);
     }
   }
 }

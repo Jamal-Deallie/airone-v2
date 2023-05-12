@@ -41,7 +41,7 @@ export default function Slider({}: Props) {
             </div>
           </button>
         </div>
-        <div className='blaze-container mt-xs'>
+        <div className='blaze-container mt-2-3'>
           <div className='blaze-track-container'>
             <div className='blaze-track'>
               {teamItems.map(item => {

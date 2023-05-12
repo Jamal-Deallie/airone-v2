@@ -1,6 +1,7 @@
 import MarqueeLoop from '@/components/MarqueeLoop';
-import { ClientList } from '@/types/typings';
+import { ClientList } from '../../types/typings';
 import ContainerAnimation from '@/animations/ContainerAnimation';
+import FadeIn from '@/animations/FadeIn';
 import client from '@/data/clients.json';
 import styles from '@/styles/containers/Clients.module.scss';
 import Image from 'next/image';
@@ -11,11 +12,11 @@ type Props = {};
 export default function Clients({}: Props) {
   const clientList: ClientList[] = client;
   return (
-    <ContainerAnimation content={true}>
-      <div className='pb-9 quaternary-bg'>
-        <div className='title-center pt'>
-          <h1 className='title-tertiary title'>Our</h1>
-          <h1 className='title-tertiary title'>Friends</h1>
+    <div className='bg-quaternary py-10 br-y'>
+      <ContainerAnimation>
+        <div className='title-center'>
+          <h1 className='title tertiary'>Our</h1>
+          <h1 className='title tertiary'>Friends</h1>
 
           <div className='star-cont center'>
             <div className='star'>
@@ -42,13 +43,14 @@ export default function Clients({}: Props) {
             </div>
           </div>
         </div>
-
-        <div className={cn(styles['clients'], 'content')}>
+      </ContainerAnimation>
+      <FadeIn start='top center'>
+        <div className={cn(styles['clients'], 'mt-7-10 fadeIn')}>
           <MarqueeLoop clients={clientList.slice(1, 12)} />
           <MarqueeLoop reversed={true} clients={clientList.slice(12, 24)} />
           <MarqueeLoop clients={clientList.slice(24, 36)} />
         </div>
-      </div>
-    </ContainerAnimation>
+      </FadeIn>
+    </div>
   );
 }

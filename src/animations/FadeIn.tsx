@@ -1,34 +1,22 @@
 import { ReactNode, useRef } from 'react';
 import { useIsomorphicLayoutEffect } from '../hooks/useIsomorphicLayout';
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import SplitText from 'gsap/dist/SplitText';
+
 
 type AnimationProps = {
   children?: ReactNode;
   delay?: 0;
   start?: string;
-  content?: boolean;
-  heading?: string;
   duration?: number;
 };
 
-export default function FadeIn({
-  children,
-  start,
-  content = false,
-  heading,
-  duration,
-}: AnimationProps) {
+export default function FadeIn({ children, start, duration }: AnimationProps) {
   const root = useRef<HTMLDivElement>(null!);
   const tl = useRef<gsap.core.Timeline>(null!);
 
   useIsomorphicLayoutEffect(() => {
-    let mm = gsap.matchMedia(root);
-
-    mm.add('(min-width: 800px)', () => {
-      let q = gsap.utils.selector(root.current);
-
+    const mm = gsap.matchMedia(root);
+    mm.add('(min-width: 800px)', context => {
       tl.current = gsap.timeline({
         scrollTrigger: {
           start: start || 'center center',
@@ -37,7 +25,7 @@ export default function FadeIn({
         },
       });
 
-      tl.current.from(q('.fadeIn'), {
+      tl.current.from('.fadeIn', {
         opacity: 0,
         duration: duration || 1,
         ease: 'power4.out',
@@ -49,9 +37,5 @@ export default function FadeIn({
     };
   }, []);
 
-  return (
-    <div ref={root} className='of-h'>
-      {children}
-    </div>
-  );
+  return <div ref={root}>{children}</div>;
 }

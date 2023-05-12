@@ -16,19 +16,6 @@ export default function Menu({}: Props) {
     shallow
   );
   const openShopMenu = () => setNavIsOpened(!navIsOpened);
-  const router = useRouter();
-
-  // useEffect(() => {
-  //   function onRouteChange() {
-  //     setNavIsOpened(false);
-  //   }
-
-  //   router.events.on('routeChangeStart', onRouteChange);
-
-  //   return () => {
-  //     router.events.off('routeChangeStart', onRouteChange);
-  //   };
-  // }, []);
 
   const tl = useRef<gsap.core.Timeline | null>(null);
 

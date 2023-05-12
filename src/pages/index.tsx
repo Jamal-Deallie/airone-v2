@@ -6,12 +6,15 @@ import Founder from '@/containers/Founder';
 import Description from '@/containers/Description';
 import NotableWork from '@/containers/NotableWork';
 import Hero from '@/containers/Hero';
+import SEO from '@/components/SEO';
+import { SEOResults as Results } from '../../types/typings';
 
-type Props = {};
+type PageProps = { seo?: Results };
 
-export default function home({}: Props) {
+export default function home({ seo }: PageProps) {
   return (
     <>
+      <SEO {...seo} />
       <Hero />
       <Description />
       <Clients />

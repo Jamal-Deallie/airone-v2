@@ -1,5 +1,4 @@
 @use 'sass:map';
-@use '@/styles/base/_spacing' as *;
 
 $layout: (
   'columns-count': (
@@ -41,13 +40,6 @@ $layout: (
   margin-inline: auto;
   @include desktop {
     max-width: var(--layout-width);
-  }
-}
-
-.px-xl {
-  padding-top: mobile-vh(160px);
-  @include desktop {
-    padding-top: desktop-vh(160px);
   }
 }
 

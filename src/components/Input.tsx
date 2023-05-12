@@ -1,4 +1,4 @@
-import React, {
+import  {
   DetailedHTMLProps,
   ForwardedRef,
   forwardRef,
@@ -8,7 +8,7 @@ import React, {
 import cn from 'classnames';
 import styles from '@/styles/components/Input.module.scss';
 
-export interface InputProps
+interface InputProps
   extends DetailedHTMLProps<
     HTMLAttributes<HTMLInputElement>,
     HTMLInputElement

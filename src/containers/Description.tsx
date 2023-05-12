@@ -8,11 +8,12 @@ type Props = {};
 
 export default function Description({}: Props) {
   return (
-    <section className={styles['description']}>
+    <section className={cn(styles['description'], 'py-10-12')}>
       <div className='main-cont'>
         <div className={styles['outer-container']}>
           <SplitLines>
-            <div className={styles['description-wrapper']}>
+            <div
+              className={cn(styles['description-wrapper'], 'title tertiary')}>
               <p>
                 From captivating visuals to compelling narratives, AirOne will
                 help you engage your audience in a whole new dimension.
@@ -20,7 +21,7 @@ export default function Description({}: Props) {
             </div>
           </SplitLines>
           <FadeIn start={'top center'}>
-            <div className={cn(styles['image'], 'fadeIn')}>
+            <div className={cn(styles['image'], 'fadeIn mt-6 br')}>
               <Image
                 alt='AirOne Team'
                 src={'/img/airone_team.webp'}

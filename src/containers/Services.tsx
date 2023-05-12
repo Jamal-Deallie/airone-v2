@@ -11,11 +11,11 @@ type Props = {};
 export default function Services({}: Props) {
   return (
     <ContainerAnimation iconUp={true}>
-      <div className={cn(styles['service'], 'pb-9')}>
+      <div className={cn(styles['service'], 'bg-tertiary py-10')}>
         <div className='grid-inner'>
-          <div className='title-left pt'>
-            <h1 className='title-quaternary title'>Our</h1>
-            <h1 className='title-quaternary title'>Services</h1>
+          <div className='title-left'>
+            <h1 className='title quaternary'>Our</h1>
+            <h1 className='title quaternary'>Services</h1>
             <div className={cn('star-cont mt', styles['stars'])}>
               <div className='star'>
                 <Image

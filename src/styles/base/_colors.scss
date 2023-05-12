@@ -1,11 +1,19 @@
 @use 'sass:color';
 @use '@/styles/abstracts/_index' as *;
 
+$colors: (
+  'primary': #683aff,
+  'secondary': #1a1b1d,
+  'tertiary': #fff6df,
+  'quaternary': #fbc748,
+  'quinary': #ff7438,
+);
+
 @each $name, $color in $colors {
-  .#{$name}-clr {
+  .clr-#{$name} {
     color: #{$color};
   }
-  .#{$name}-bg {
+  .bg-#{$name} {
     background-color: #{$color};
   }
 }

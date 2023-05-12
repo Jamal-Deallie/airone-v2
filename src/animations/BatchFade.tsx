@@ -11,7 +11,8 @@ export default function BatchFade({ children }: AnimationProps) {
   const root = useRef<HTMLDivElement>(null!);
 
   useIsomorphicLayoutEffect(() => {
-    let ctx = gsap.context(() => {
+    const mm = gsap.matchMedia(root);
+    mm.add('(min-width: 800px)', context => {
       const animation = gsap.fromTo(
         '.fade',
         { autoAlpha: 0, y: 100 },
@@ -30,7 +31,9 @@ export default function BatchFade({ children }: AnimationProps) {
       });
     }, root);
 
-    return () => ctx.revert();
+    return () => {
+      mm.revert();
+    };
   }, []);
 
   return (

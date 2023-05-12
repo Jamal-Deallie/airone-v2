@@ -5,17 +5,18 @@
   position: relative;
   display: flex;
   min-height: 100vh;
+  min-height: calc(100 * var(--vh));
   overflow: hidden;
   flex-direction: column;
   overflow: hidden;
+
   .main-wrap {
-    margin-top: var(--nav-height);
     flex-grow: 1;
     min-height: auto;
+    margin-top: var(--nav-height);
+    // @include desktop {
 
-    @include desktop {
-      margin-top: var(--nav-height);
-      min-height: calc(80vh - var(--nav-height));
-    }
+    //   min-height: calc(80vh - var(--nav-height));
+    // }
   }
 }

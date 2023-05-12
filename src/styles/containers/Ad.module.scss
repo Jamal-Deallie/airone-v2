@@ -3,24 +3,16 @@
 
 .ad {
   min-height: 100%;
-  @include mobile {
-    padding-top: mobile-vw(96px);
-    padding-bottom: mobile-vw(96px);
-  }
 
   h1 {
-    @include outline-font(var(--quaternary-variant), mobile-vw(1px));
     font-size: mobile-vw(25.89px);
   }
 
   @include desktop {
     min-height: 100%;
-    padding-top: desktop-vw(128px);
 
     h1 {
-      @include outline-font(var(--quaternary-variant), desktop-vw(3px));
       font-size: desktop-vw(67.77px);
-      margin-bottom: desktop-vw(48px);
     }
   }
 }
@@ -30,7 +22,7 @@
 
   p:nth-of-type(3),
   p:nth-of-type(1) {
-    margin-top: desktop-vw(16px);
+    margin-top: desktop-vw(24px);
   }
 
   @include desktop {
@@ -52,12 +44,11 @@
   grid-column: 1 / -1;
   overflow: hidden;
   height: auto;
-  aspect-ratio: 1;
+  // aspect-ratio: 1;
   .img {
     position: relative;
-    border: 2px solid var(--secondary-variant);
     overflow: hidden;
-    aspect-ratio: 1;
+    // aspect-ratio: 1;
     img {
       object-fit: cover;
       height: 100%;
@@ -65,6 +56,11 @@
     }
   }
   @include desktop {
-    grid-column: 6 / 13;
+    grid-column: 6 / -1;
+    .img {
+      min-height: 50vh;
+      min-height: calc(50 * var(--vh));
+      width: 100%;
+    }
   }
 }

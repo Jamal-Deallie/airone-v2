@@ -1,13 +1,8 @@
-import { useRef } from 'react';
+import { GetStaticProps } from 'next';
 import cn from 'classnames';
 import Image from 'next/image';
-import dynamic from 'next/dynamic';
 import HeroAnimation from '@/animations/HeroAnimation';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import SplitText from 'gsap/dist/SplitText';
 import styles from '@/styles/containers/Hero.module.scss';
-import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayout';
 
 type Props = {};
 
@@ -24,25 +19,24 @@ export default function Hero({}: Props) {
             priority
           />
         </div>
-        <div className='main-cont'>
-          <div className={styles['title-cont']}>
-            <div className={styles['title']}>
-              <h1 className='clr-tertiary heading'>
+        <div className={cn(styles['title-cont'], 'mt-10 mx-auto')}>
+          <div className='main-cont'>
+            <div className={styles['title-wrap']}>
+              <h1 className='title tertiary heading'>
                 Creative Ideas out of this world
               </h1>
             </div>
+            <div className={cn(styles['arrow'], 'mt-3')}>
+              <Image
+                className='icon'
+                src={'icon/arrow-down.svg'}
+                alt='arrow-down'
+                fill
+                sizes='(max-width: 768px) 100vw)'
+                priority
+              />
+            </div>
           </div>
-        </div>
-
-        <div className={styles['arrow']}>
-          <Image
-            className='icon'
-            src={'icon/arrow-down.svg'}
-            alt='arrow-down'
-            fill
-            sizes='(max-width: 768px) 100vw)'
-            priority
-          />
         </div>
 
         <div className={styles['clouds']}>
@@ -73,3 +67,11 @@ export default function Hero({}: Props) {
     </HeroAnimation>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      id: 'home',
+    },
+  };
+};

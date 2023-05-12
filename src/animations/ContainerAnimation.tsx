@@ -51,7 +51,7 @@ export default function ContainerAnimation({
 
       tl.current.fromTo(
         stars,
-        { width: '0%' },
+        { width: '0%', opacity: 0 },
         {
           opacity: 1,
           width: '100%',
@@ -87,13 +87,6 @@ export default function ContainerAnimation({
             },
             '<'
           );
-
-      content
-        ? tl.current.from('.content', {
-            opacity: 0,
-            ease: 'power2',
-          })
-        : null;
     });
 
     return () => {

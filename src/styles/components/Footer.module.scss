@@ -1,14 +1,6 @@
 @use '@/styles/abstracts/_index' as *;
 @use '@/styles/base/_media' as *;
 
-.footer-cont {
-  // margin-top: mobile-vw(96px);
-  color: var(--tertiary-variant);
-  @include desktop {
-    // margin-top: desktop-vw(128px);
-  }
-}
-
 .footer {
   width: 100%;
 
@@ -184,7 +176,7 @@
 
 .socials-cont {
   height: 24px;
-
+  color: var(--tertiary-variant);
   ul {
     @include mobile {
       margin-top: mobile-vw(16px);

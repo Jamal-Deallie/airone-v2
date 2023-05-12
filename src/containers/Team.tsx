@@ -4,11 +4,11 @@ type Props = {};
 
 export default function Team({}: Props) {
   return (
-    <div className='br-t bg-primary padx'>
+    <div className='br-t bg-primary py-10'>
       <div className='grid-inner'>
         <div className='title-center'>
-          <h1 className='title-quaternary'>The</h1>
-          <h1 className='title-quaternary'>Team</h1>
+          <h1 className='title quaternary'>The</h1>
+          <h1 className='title quaternary'>Team</h1>
         </div>
 
       </div>

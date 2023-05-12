@@ -1,2 +1,199 @@
-@use '@/styles/abstracts/_index' as *;
+$spacing: (
+  '1': 8px,
+  '2': 16px,
+  '3': 24px,
+  '4': 32px,
+  '5': 40px,
+  '6': 48px,
+  '7': 64px,
+  '8': 72px,
+  '9': 88px,
+  '10': 96px,
+  '11': 120px,
+  '12': 128px,
+  '13': 180px,
+  '14': 188px,
+);
 
+.mx-auto {
+  margin-inline: auto;
+}
+.px-auto {
+  padding-inline: auto;
+}
+
+.mtb-1-2 {
+  writing-mode: horizontal-tb;
+  margin-block: mobile-vw(map-get($spacing, '1'));
+
+  @include desktop {
+    margin-block: desktop-vw(map-get($spacing, '2'));
+  }
+}
+
+.mt-2 {
+  writing-mode: horizontal-tb;
+  margin-block: mobile-vw(map-get($spacing, '2'));
+
+  @include desktop {
+    margin-block: desktop-vw(map-get($spacing, '2'));
+  }
+}
+
+.mt-2-3 {
+  margin-top: mobile-vw(map-get($spacing, '2'));
+
+  @include desktop {
+    margin-top: desktop-vw(map-get($spacing, '3'));
+  }
+}
+
+.mb-2-3 {
+  margin-bottom: mobile-vw(map-get($spacing, '2'));
+
+  @include desktop {
+    margin-bottom: desktop-vw(map-get($spacing, '3'));
+  }
+}
+
+.my-2-3 {
+  margin: mobile-vw(map-get($spacing, '2')) 0;
+
+  @include desktop {
+    margin: desktop-vw(map-get($spacing, '3')) 0;
+  }
+}
+
+.p-3-7 {
+  padding: mobile-vw(map-get($spacing, '3'));
+  @include desktop {
+    padding: desktop-vw(map-get($spacing, '7'));
+  }
+}
+
+.mb-6-10 {
+  margin-bottom: mobile-vw(map-get($spacing, '6'));
+
+  @include desktop {
+    margin-bottom: desktop-vw(map-get($spacing, '10'));
+  }
+}
+
+.mt-7-10 {
+  margin-top: mobile-vw(map-get($spacing, '7'));
+
+  @include desktop {
+    margin-top: desktop-vw(map-get($spacing, '10'));
+  }
+}
+
+.mt-7-12 {
+  margin-top: mobile-vw(map-get($spacing, '7'));
+
+  @include desktop {
+    margin-top: desktop-vw(map-get($spacing, '12'));
+  }
+}
+
+.mt-10 {
+  margin-top: mobile-vw(map-get($spacing, '10'));
+
+  @include desktop {
+    margin-top: desktop-vw(map-get($spacing, '10'));
+  }
+}
+
+.pt-10 {
+  padding-top: mobile-vw(map-get($spacing, '10'));
+
+  @include desktop {
+    padding-top: desktop-vw(map-get($spacing, '10'));
+  }
+}
+
+.py-10 {
+  padding: mobile-vw(map-get($spacing, '10')) 0;
+
+  @include desktop {
+    padding: desktop-vw(map-get($spacing, '10')) 0;
+  }
+}
+
+.pt-10-12 {
+  padding-top: mobile-vw(map-get($spacing, '10'));
+
+  @include desktop {
+    padding-top: desktop-vw(map-get($spacing, '12'));
+  }
+}
+
+.py-10-12 {
+  padding: mobile-vw(map-get($spacing, '10')) 0;
+
+  @include desktop {
+    padding: desktop-vw(map-get($spacing, '12')) 0;
+  }
+}
+
+.mt-6 {
+  margin-top: mobile-vw(map-get($spacing, '6'));
+
+  @include desktop {
+    margin-top: desktop-vw(map-get($spacing, '6'));
+  }
+}
+
+.mt-3 {
+  margin-top: mobile-vw(16px);
+
+  @include desktop {
+    margin-top: desktop-vw(24px);
+  }
+}
+
+.mt-2 {
+  margin-top: mobile-vw(8px);
+
+  @include desktop {
+    margin-top: desktop-vw(16px);
+  }
+}
+
+.mb-2 {
+  margin-bottom: mobile-vw(8px);
+
+  @include desktop {
+    margin-bottom: desktop-vw(16px);
+  }
+}
+
+.mt-1 {
+  margin-top: mobile-vw(8px);
+
+  @include desktop {
+    margin-top: desktop-vw(8px);
+  }
+}
+
+.pt-7 {
+  padding-top: mobile-vw(32px);
+
+  @include desktop {
+    padding-top: desktop-vw(64px);
+  }
+}
+
+.pt-7 {
+  padding-top: mobile-vw(32px);
+
+  @include desktop {
+    padding-top: desktop-vw(64px);
+  }
+}
+.pb-7 {
+  padding-bottom: mobile-vw(32px);
+
+  @include desktop {
+    padding-bottom: desktop-vw(64px);
+  }
+}

@@ -1,7 +1,7 @@
 import { GetServerSideProps } from 'next';
 import styles from '@/styles/containers/Ad.module.scss';
 import Image from 'next/image';
-import { AdData } from '@/types/typings';
+import { AdData } from '../../../types/typings';
 import cn from 'classnames';
 
 type Props = {
@@ -13,11 +13,11 @@ export default function Advertisements({ data }: Props) {
     data[0];
 
   return (
-    <div className={cn(styles['ad'], 'bg-tertiary pb-9')}>
+    <div className={cn(styles['ad'], 'bg-tertiary py-10')}>
       <div className='grid-inner'>
         <div className={styles.content}>
           <div className={styles.title}>
-            <h1 id='heading'>{title}</h1>
+            <h1 className='title quaternary'>{title}</h1>
           </div>
 
           <p className={styles.industry}>{industry}</p>
@@ -26,7 +26,9 @@ export default function Advertisements({ data }: Props) {
         </div>
 
         <div className={styles.wrap}>
-          <div className={styles.img}>
+          <div
+            className={cn(styles.img, 'br')}
+            style={{ aspectRatio: `${image_width}/${image_height}` }}>
             <Image
               src={image}
               alt={title}

@@ -1,11 +1,3 @@
 @use '@/styles/abstracts/_index' as *;
 @use '@/styles/base/_media' as *;
 
-.clients {
-  margin-top: mobile-vw(48px);
-
-  @include desktop {
-    grid-column: 1 / -1;
-    margin-top: desktop-vw(96px);
-  }
-}

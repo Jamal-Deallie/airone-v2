@@ -9,14 +9,14 @@ h5 {
   text-transform: uppercase;
   font-weight: 900;
   font-style: normal;
-  line-height: 86%;
+  line-height: .86;
 }
 
 p {
   font-family: var(--body-font), sans-serif;
   font-weight: 400;
   font-style: normal;
-  line-height: 125%;
+  line-height: 1.25;
 }
 
 .text {
@@ -45,6 +45,45 @@ p {
 .split-child {
   display: inline-block;
   opacity: 1;
+  transform: translateY(0%);
+  // @include desktop {
+  //   transform: translateY(-100%);
+  //   opacity: 0;
+  // }
+}
+
+.title {
+  font-size: mobile-vw(41.89px);
+  line-height: 1;
+  letter-spacing: 0.15px;
+  &.tertiary {
+    @include outline-font(var(--tertiary-variant), mobile-vw(1.75px));
+  }
+
+  &.quaternary {
+    @include outline-font(var(--quaternary-variant), mobile-vw(1.75px));
+  }
+  &.ghost {
+    @include outline-font(transparent, mobile-vw(1.75px));
+  }
+
+  @include desktop {
+    font-size: desktop-vw(177.42px);
+    line-height: 0.87;
+    letter-spacing: .25px;
+
+    &.tertiary {
+      @include outline-font(var(--tertiary-variant), desktop-vw(3px));
+    }
+
+    &.quaternary {
+      @include outline-font(var(--quaternary-variant), desktop-vw(3px));
+    }
+
+    &.ghost {
+      @include outline-font(transparent, desktop-vw(3px));
+    }
+  }
 }
 
 .title-tertiary {
@@ -53,7 +92,6 @@ p {
   line-height: 1;
 
   @include desktop {
-    @include outline-font(var(--tertiary-variant), desktop-vw(3px));
     font-size: desktop-vw(177.42px);
     line-height: 0.87;
     letter-spacing: 1px;
@@ -111,4 +149,8 @@ p {
   @include desktop {
     grid-column: 1 / span 5;
   }
+}
+
+.split-child {
+  display: inline-block !important;
 }

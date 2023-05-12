@@ -29,7 +29,7 @@ export default function Footer({}: Props) {
         <div className='grid-cont'>
           <div className={styles['form']}>
             <div>
-              <h4>Stay up to date with the latest news from the Airone</h4>
+              <h4 className='title clr-tertiary'>Stay up to date with the latest news from the Airone</h4>
             </div>
             <form onSubmit={onInputSubmit}>
               <div className={styles['field-wrap']}>
@@ -41,7 +41,6 @@ export default function Footer({}: Props) {
                 />
 
                 <button type='submit'>
-                  {' '}
                   <svg
                     viewBox='0 0 24 24'
                     fill='none'
@@ -59,25 +58,29 @@ export default function Footer({}: Props) {
           </div>
 
           <div className={styles['link-wrap']}>
-            <h5>Menu</h5>
+            <h5 className='title clr-tertiary'>Menu</h5>
             <ul>
               {Links.map(({ id, path, label }) => {
                 return (
                   <li key={id}>
-                    <Link href={path}>{label}</Link>
+                    <Link href={path} className='clr-tertiary'>
+                      {label}
+                    </Link>
                   </li>
                 );
               })}
             </ul>
           </div>
           <div className={styles['support-wrap']}>
-            <h5>Support</h5>
+            <h5 className='title clr-tertiary'>Support</h5>
 
             <ul>
               {supportLinks.map(({ id, path, label }) => {
                 return (
                   <li key={id}>
-                    <Link href={path}>{label}</Link>
+                    <Link href={path} className='clr-tertiary'>
+                      {label}
+                    </Link>
                   </li>
                 );
               })}

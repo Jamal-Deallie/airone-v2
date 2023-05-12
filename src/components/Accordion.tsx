@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, memo } from 'react';
 import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayout';
 import { gsap } from 'gsap';
 import cn from 'classnames';
@@ -9,7 +9,7 @@ type AccordionProps = {
   answers?: string;
 };
 
-const Accordion = ({ questions, answers }: AccordionProps) => {
+const AccordionComponent = ({ questions, answers }: AccordionProps) => {
   const tl = useRef<gsap.core.Timeline | null>(null);
   const root = useRef<HTMLDivElement>(null!);
   const answer = useRef<HTMLDivElement>(null!);
@@ -80,4 +80,4 @@ const Accordion = ({ questions, answers }: AccordionProps) => {
   );
 };
 
-export default Accordion;
+export const Accordion = memo(AccordionComponent);

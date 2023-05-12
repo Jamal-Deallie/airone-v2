@@ -6,7 +6,7 @@ import cn from 'classnames';
 import styles from '@/styles/components/Map.module.scss';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-type MapProps = { latitude?: number; longitude?: number };
+type MapProps = { latitude: number; longitude: number };
 
 export default function RenderedMap({ latitude, longitude }: MapProps) {
   const root = useRef<any>(null);
@@ -23,7 +23,7 @@ export default function RenderedMap({ latitude, longitude }: MapProps) {
       style={{ width: '100%', height: '100%' }}
       mapStyle='mapbox://styles/mapbox/streets-v9'
       mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_GL_ACCESS_TOKEN}>
-      <Marker longitude={-96.824010} latitude={32.776370}>
+      <Marker longitude={longitude} latitude={latitude}>
         <div className={styles['logo']}>
           <Image
             src={'/favicon-32x32.png'}

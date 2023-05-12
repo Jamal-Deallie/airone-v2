@@ -1,7 +1,7 @@
 import React from 'react';
 import { NextSeo } from 'next-seo';
 import NextHead from 'next/head';
-import { SEOResults as Results } from '@/types/typings';
+import { SEOResults as Results } from '../../types/typings';
 
 export default function SEO({
   title = '',

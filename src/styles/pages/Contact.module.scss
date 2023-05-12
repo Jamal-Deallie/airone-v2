@@ -6,15 +6,15 @@
 }
 
 .desc {
-  grid-column: 1 / 5;
+  max-width: 50ch;
 }
 
 .form-wrap {
-  margin-top: mobile-vw(96px);
+  margin-top: mobile-vw(48px);
   grid-column: 1 / -1;
   @include desktop {
     grid-column: 6 / -1;
-    margin-top: desktop-vw(128px);
+    margin-top: desktop-vw(64px);
   }
 }
 
@@ -43,6 +43,9 @@
   justify-content: space-around;
   margin-top: mobile-vw(48px);
   flex-direction: column;
+  @include mobile {
+    gap: mobile-vw(24px);
+  }
   @include desktop {
     margin-top: desktop-vw(96px);
     flex-direction: row;
@@ -54,14 +57,12 @@
   align-items: center;
   text-align: center;
   flex-direction: column;
-
   h4 {
     @include desktop {
       font-size: desktop-vw(39.06px);
       margin: desktop-vw(16px) 0;
     }
   }
-
   p {
     text-transform: uppercase;
   }
@@ -71,7 +72,6 @@
   overflow: hidden;
   position: relative;
   margin-top: mobile-vw(24px);
-  border: solid 2.5px var(--secondary-variant);
   height: mobile-vw(325px);
 
   @include desktop {

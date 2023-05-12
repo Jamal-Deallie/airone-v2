@@ -1,44 +1,19 @@
-import { useRef } from 'react';
-import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayout';
 import cn from 'classnames';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import Image from 'next/image';
 import styles from '@/styles/containers/About.module.scss';
 
 type Props = {};
 
 export default function About({}: Props) {
-  // const root = useRef<HTMLDivElement | null>(null);
-
-  // useIsomorphicLayoutEffect(() => {
-  //   if (root.current) {
-  //     gsap.fromTo(
-  //       root.current,
-  //       { opacity: 0 },
-  //       {
-  //         opacity: 1,
-  //         scrollTrigger: {
-  //           start: 'top+=100 center',
-  //           end: 'bottom bottom',
-  //           trigger: root.current,
-  //         },
-  //       }
-  //     );
-  //   }
-  // }, []);
-
   return (
-    // <div ref={root}>
-    <section className='padx bg-tertiary'>
+    <section className='py-10 bg-tertiary'>
       <div className='grid-inner'>
-        <div className={styles['about-wrap']}>
+        <div className={cn(styles['about-wrap'], "mb-2-3")}>
           <p className='desc-big'>
             We don’t care just about design. We care about you.
           </p>
         </div>
 
-        <div className={cn(styles['desc-wrap'], 'mt-m')}>
+        <div className={cn(styles['desc-wrap'], 'mt-2')}>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Mollis
@@ -48,7 +23,7 @@ export default function About({}: Props) {
             venenatis lectus magna fringilla. Convallis aenean et tortor at
             risus viverra adipiscing at in. fames.
           </p>
-          <p>
+          <p className='mt-2'>
             Ut eu sem integer vitae justo eget magna fermentum. Ut aliquam purus
             sit amet luctus venenatis. Tempor orci eu lobortis elementum nibh
             tellus molestie nunc. Sit amet justo donec enim diam vulputate ut
@@ -59,6 +34,5 @@ export default function About({}: Props) {
         </div>
       </div>
     </section>
-    // </div>
   );
 }

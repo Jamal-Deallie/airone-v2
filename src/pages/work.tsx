@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import type { NextPage, GetServerSideProps } from 'next';
+import type { GetServerSideProps } from 'next';
 import PaginatedPage from '@/containers/PaginatedPage';
 import { useRouter } from 'next/router';
-import { AdData, PageData } from '@/types/typings';
+import { AdData, PageData } from '../../types/typings';
 
 interface Props {
   data: AdData[];
@@ -18,7 +18,20 @@ export default function Work({ data, meta }: Props) {
       router.push({ pathname: '/work' });
     }
   }, [router]);
-  return <PaginatedPage data={data} meta={meta} />;
+
+  if (data.length) {
+  }
+  return (
+    <>
+      {data.length ? (
+        <PaginatedPage data={data} meta={meta} />
+      ) : (
+        <div>
+          <p>Error</p>
+        </div>
+      )}
+    </>
+  );
 }
 
 export const getServerSideProps: GetServerSideProps = async context => {
@@ -43,7 +56,3 @@ export const getServerSideProps: GetServerSideProps = async context => {
     },
   };
 };
-
-
-
-

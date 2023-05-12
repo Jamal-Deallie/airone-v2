@@ -27,13 +27,7 @@
 .ad {
   grid-column: 1 / -1;
   h3 {
-    @include outline-font(var(--tertiary-variant), 1.75px);
     font-size: mobile-vw(31.25px);
-    margin-bottom: mobile-vw(8px);
-    font-weight: 900;
-    font-style: normal;
-    letter-spacing: -0.03em;
-    line-height: 86%;
   }
   .img {
     position: relative;
@@ -41,16 +35,13 @@
     width: 100%;
     img {
       object-fit: cover;
+      width: 100%;
+      height: 100%;
     }
   }
   @include desktop {
     h3 {
-      @include outline-font(var(--tertiary-variant), 3px);
       font-size: desktop-vw(109.66px);
-      margin-bottom: desktop-vw(24px);
-    }
-    .img {
-      margin: desktop-vw(24px) 0;
     }
   }
 }
@@ -85,9 +76,9 @@
 }
 
 .stars {
-  margin: mobile-vw(64px) 0 0 mobile-vw(48px);
+  margin-left: mobile-vw(48px);
 
   @include desktop {
-    margin: desktop-vw(128px) 0 0 desktop-vw(275px);
+    margin-left: desktop-vw(275px);
   }
 }
